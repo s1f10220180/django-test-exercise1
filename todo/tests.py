@@ -108,7 +108,7 @@ class TodoViewTestCase(TestCase):
 
 
     def test_detail_get_success(self):
-        task = Task(title='task1', due_to=timezone.make_aware(datetime(2023, 7, 1)))
+        task = Task(title='task1', due_at=timezone.make_aware(datetime(2023, 7, 1)))
         task.save()
         client = Client()
         response = client.get('/{}/'.format(task.pk))
